@@ -1,0 +1,32 @@
+{
+  "name": "photo-tagging-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julien-dev-29/photo-tagging-app-backend.git"
+  },
+  "keywords": [],
+  "author": "Jurol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julien-dev-29/photo-tagging-app-backend/issues"
+  },
+  "homepage": "https://github.com/julien-dev-29/photo-tagging-app-backend#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "tsx": "^4.20.6"
+  }
+}

@@ -8,5 +8,6 @@ const router = Router()
 router.get("/", controller.get)
 router.post("/check", controller.check)
 router.post("/record", controller.record)
+router.get("/records", controller.getRecords)
 
 export default router

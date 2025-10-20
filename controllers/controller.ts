@@ -82,11 +82,24 @@ export default {
     },
     record: async (req: Request, res: Response) => {
         const { name, score } = req.body
-        await prisma.user.create({
-            data: {
-                name: name,
-                score: score
-            }
-        })
+        try {
+            await prisma.user.create({
+                data: {
+                    name: name,
+                    score: score
+                }
+            })
+            res.status(201).json({ message: "Name recorded!" })
+        } catch (error) {
+            res.status(400).json({ error: error })
+        }
+    },
+    getRecords: async (req: Request, res: Response) => {
+        try {
+            const users = await prisma.user.findMany({})
+            res.status(200).json({ users: users })
+        } catch (error) {
+            res.status(400).json({ error: error })
+        }
     }
 };

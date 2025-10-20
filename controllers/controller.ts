@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-
+import prisma from "../prisma/client.ts"
 interface Character {
     id: string;
     name: string;
@@ -80,4 +80,13 @@ export default {
             return res.json({ message: "Fail!" });
         }
     },
+    record: async (req: Request, res: Response) => {
+        const { name, score } = req.body
+        await prisma.user.create({
+            data: {
+                name: name,
+                score: score
+            }
+        })
+    }
 };
